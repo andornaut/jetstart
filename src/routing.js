@@ -18,7 +18,7 @@ export const router = (routerContainer, ...routes) => {
         }
         return (context, next) => {
           // A single subscription is registered below; it always renders the current view.
-          el = renderViewWithoutSubscribing(exp());
+          el = renderViewWithoutSubscribing(exp(context));
           routerContainer.innerHTML = '';
           routerContainer.appendChild(el);
           if (i < lastIdx) {
